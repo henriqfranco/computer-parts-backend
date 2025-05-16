@@ -11,4 +11,6 @@ routes.get('/pcparts', pcPartsController.getPcParts);
 routes.get('/pcparts/gpu', pcPartsController.getGPUs);
 routes.get('/pcparts/cpu', pcPartsController.getCPUs);
 
+routes.post('/pcparts/gpu/add', pcPartsController.addNewGPU);
+
 export default routes;

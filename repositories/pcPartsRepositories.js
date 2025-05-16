@@ -25,6 +25,19 @@ const pcPartsRepository = {
         });
         return list[0]
     },
+    async addGPU(gpu) {
+        const sql = 'INSERT INTO gpus (gpu_brand, gpu_model, gpu_memory) VALUES (?, ?, ?);';
+        const list = await pcParts.promise().execute(sql,
+            [
+                gpu.gpu_brand,
+                gpu.gpu_model,
+                gpu.gpu_memory,
+            ]
+        ).catch(error => {
+            return [error];
+        });
+        return list[0]
+    },
 };
 
 export default pcPartsRepository;
